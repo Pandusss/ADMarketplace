@@ -1,0 +1,45 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0; /* Allow flex items to shrink */
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  margin-top: 5px;
+  border: 2px solid var(--color-border-separator);
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.done {
+  border-color: var(--color-state-success);
+  background: var(--color-state-success);
+}
+
+.current {
+  border-color: var(--color-accent-primary);
+  background: var(--color-accent-primary);
+}
+
+.future {
+  opacity: 0.55;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0; /* Allow text truncation if needed */
+}
+

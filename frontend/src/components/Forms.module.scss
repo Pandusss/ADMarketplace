@@ -1,0 +1,21 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 20px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.formError {
+    background: rgba(255, 59, 48, 0.1);
+    color: #ff3b30;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.4;
+}

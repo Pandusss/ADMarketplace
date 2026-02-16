@@ -1,0 +1,53 @@
+@use '../../styles/variables' as *;
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.label {
+    font-size: 13px;
+    line-height: 16px;
+    color: var(--color-foreground-secondary);
+    margin-left: 4px;
+}
+
+.input {
+    width: 100%;
+    appearance: none;
+    border: none;
+    background-color: var(--color-background-secondary);
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 17px;
+    line-height: 22px;
+    color: var(--color-foreground-primary);
+    min-height: 100px;
+    resize: vertical;
+    font-family: inherit;
+    box-sizing: border-box;
+
+    &::placeholder {
+        color: var(--color-foreground-secondary);
+    }
+
+    &:focus {
+        outline: none;
+        background-color: var(--color-background-base);
+        box-shadow: 0 0 0 2px var(--color-accent-primary, #2481cc);
+    }
+}
+
+.error {
+    font-size: 13px;
+    color: var(--color-state-destructive);
+    margin-left: 4px;
+}
+
+.hint {
+    font-size: 13px;
+    color: var(--color-foreground-secondary);
+    margin-left: 4px;
+}

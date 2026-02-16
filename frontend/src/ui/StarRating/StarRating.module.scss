@@ -1,0 +1,31 @@
+.stars {
+  display: inline-flex;
+  align-items: center;
+}
+
+.star {
+  color: var(--color-foreground-secondary);
+  opacity: 0.25;
+  cursor: pointer;
+  transition: color 0.15s, opacity 0.15s, transform 0.1s;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  line-height: 1;
+
+  &:active:not(.readonly) {
+    transform: scale(1.2);
+  }
+}
+
+.filled {
+  color: #f5a623;
+  opacity: 1;
+}
+
+.readonly {
+  cursor: default;
+
+  &:active {
+    transform: none;
+  }
+}

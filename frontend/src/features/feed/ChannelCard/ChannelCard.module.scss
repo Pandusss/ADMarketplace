@@ -1,0 +1,14 @@
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.actions {
+  margin-top: 4px;
+}
+
+.mutedNote {
+  opacity: 0.85;
+}
+

@@ -1,0 +1,134 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 24px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 4px;
+}
+
+.channelInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.statCard {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: var(--color-background-section);
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mainValue {
+    font-size: 24px;
+    line-height: normal;
+}
+
+.growthList {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.growthItem {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.growthLabel {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--color-foreground-secondary);
+}
+
+.regionGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.regionItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.regionBadge {
+    width: 85px;
+    justify-content: center;
+    padding: 2px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.regionBarBg {
+    flex: 1;
+    height: 6px;
+    background: var(--color-fill-secondary);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.regionBarFill {
+    height: 100%;
+    background: var(--color-accent-primary);
+    border-radius: 10px;
+}
+
+.regionValue {
+    font-size: 13px;
+    font-weight: 700;
+    min-width: 32px;
+    text-align: right;
+}
+
+.miniList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.miniItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.postsGrowth {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.description {
+    margin-top: 8px;
+}
+
+@media (max-width: 360px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

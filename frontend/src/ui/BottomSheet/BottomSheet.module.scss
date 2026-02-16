@@ -1,0 +1,76 @@
+@use '../../styles/variables' as *;
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    pointer-events: none;
+    transition: background-color 0.3s ease-out;
+
+    &.visible {
+        pointer-events: auto;
+        background-color: var(--color-background-overlay, rgba(0, 0, 0, 0.5));
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+    }
+}
+
+.sheet {
+    background-color: var(--color-background-base);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    max-height: 90vh;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+    box-shadow: 0 -4px 32px rgba(0, 0, 0, 0.2);
+
+    &.slideUp {
+        transform: translateY(0);
+    }
+}
+
+.handleWrapper {
+    width: 100%;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.handle {
+    width: 32px;
+    height: 4px;
+    background-color: var(--color-border-separator, rgba(0, 0, 0, 0.1));
+    /* Using border color for handle */
+    border-radius: 2px;
+}
+
+.header {
+    padding: 0 16px 12px 16px;
+    flex-shrink: 0;
+}
+
+.title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-foreground-primary);
+}
+
+.content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 16px 32px 16px;
+    /* Safe area bottom handled by body usually but add some padding */
+    padding-bottom: calc(16px + var(--safe-area-bottom));
+}

@@ -1,0 +1,321 @@
+.stepper {
+  position: relative;
+  padding: 8px 0;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  min-height: 44px;
+  padding-bottom: 20px;
+  padding-left: 16px;
+}
+
+.step:last-child {
+  padding-bottom: 0;
+}
+
+.stepConnector {
+  position: absolute;
+  left: 27px;
+  top: 34px;
+  bottom: -10px;
+  width: 2px;
+  background: var(--color-border-separator);
+  z-index: 0;
+  transition:
+    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step:last-child .stepConnector,
+.step:last-of-type .stepConnector {
+  display: none;
+}
+
+/* Fade when future steps are collapsed */
+.connectorFade {
+  background: linear-gradient(to bottom, var(--color-border-separator) 0%, var(--color-border-separator) 60%, transparent 100%);
+  opacity: 0.6;
+  bottom: auto;
+  height: 28px;
+}
+
+/* Fade when future steps are expanded (fade before toggle) */
+.connectorFadeToToggle {
+  background: linear-gradient(to bottom, var(--color-border-separator) 0%, var(--color-border-separator) 60%, transparent 100%);
+  opacity: 0.6;
+  bottom: auto;
+  height: 28px;
+}
+
+.connectorLast {
+  display: none;
+}
+
+/* "Next steps" toggle row */
+.toggleStep {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  min-height: 44px;
+  padding-bottom: 20px;
+  padding-left: 16px;
+  margin-top: -25px;
+}
+
+/* Connector from toggle to first future step (only when expanded) */
+.toggleStep .toggleConnector {
+  position: absolute;
+  left: 27px;
+  top: 46px;
+  height: 28px;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent 0%, transparent 1%, var(--color-border-separator) 90%, var(--color-border-separator) 100%);
+  z-index: 0;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.toggleStepExpanded .toggleConnector {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stepContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.markerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  margin-top: 10px;
+}
+
+.marker {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--color-foreground-tertiary);
+  background-color: var(--color-background-section);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.completed {
+  background-color: var(--color-state-success);
+  border-color: var(--color-state-success);
+}
+
+.error {
+  background-color: var(--color-state-destructive);
+  border-color: var(--color-state-destructive);
+}
+
+.active {
+  background-color: var(--color-background-section);
+  border-color: var(--color-accent-primary);
+  border-width: 2.5px;
+}
+
+.pending {
+  background-color: var(--color-background-section);
+  border-color: var(--color-foreground-tertiary);
+  opacity: 0.4;
+}
+
+.checkmark {
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  z-index: 3;
+  position: relative;
+}
+
+/* Active marker animations */
+.activePulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-accent-primary);
+  opacity: 0;
+  animation: pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.activeRipple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--color-accent-primary);
+  opacity: 0;
+  animation: ripple 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation-delay: 0.3s;
+}
+
+@keyframes pulse {
+  0% {
+    width: 24px;
+    height: 24px;
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    width: 32px;
+    height: 32px;
+    opacity: 0.25;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    width: 24px;
+    height: 24px;
+    opacity: 0.12;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    width: 48px;
+    height: 48px;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.stepText {
+  flex: 1;
+  min-width: 0;
+  padding-top: 0;
+}
+
+.stepItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  min-height: 44px;
+}
+
+.activeStepItem {
+  background-color: var(--color-fill-secondary);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: -4px -16px;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Active step can have multi-line description */
+  align-items: flex-start;
+}
+
+.futureToggle {
+  width: 100%;
+  padding: 12px 0;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.futureToggle:active {
+  background-color: var(--color-fill-secondary);
+}
+
+.toggleIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--color-foreground-tertiary);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.futureSteps {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.futureStepsVisible {
+  max-height: 2000px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.txBtn {
+  background-color: var(--color-fill-secondary);
+  color: var(--color-accent-primary);
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+  font-weight: 600;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+
+.txBtn:active {
+  background-color: var(--color-fill-secondary);
+  transform: scale(0.95);
+}

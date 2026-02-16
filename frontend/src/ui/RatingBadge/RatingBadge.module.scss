@@ -1,0 +1,149 @@
+@use '../../styles/variables.scss' as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 8px;
+  background: var(--color-fill-secondary, rgba(0, 0, 0, 0.05));
+  cursor: pointer;
+  transition: background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+
+  &:active {
+    background: var(--color-fill-tertiary, rgba(0, 0, 0, 0.1));
+  }
+}
+
+.starIcon {
+  color: #f5a623;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.ratingValue {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-foreground-primary);
+  line-height: 1;
+}
+
+.ratingCount {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-foreground-secondary);
+  line-height: 1;
+}
+
+.noRating {
+  font-size: 12px;
+  color: var(--color-foreground-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.reviewItem {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-border-separator);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.reviewerName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-foreground-primary);
+}
+
+.reviewDate {
+  font-size: 12px;
+  color: var(--color-foreground-secondary);
+}
+
+.reviewStars {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 6px;
+}
+
+.reviewStar {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.reviewStarFilled {
+  color: #f5a623;
+}
+
+.reviewStarEmpty {
+  color: var(--color-foreground-secondary);
+  opacity: 0.25;
+}
+
+.reviewComment {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-foreground-primary);
+}
+
+.summarySection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border-separator);
+}
+
+.summaryRating {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-foreground-primary);
+  line-height: 1;
+}
+
+.summaryMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.summaryStars {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.summaryStar {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.summaryCount {
+  font-size: 13px;
+  color: var(--color-foreground-secondary);
+}
+
+.emptyReviews {
+  padding: 32px 0;
+  text-align: center;
+  color: var(--color-foreground-secondary);
+  font-size: 14px;
+}

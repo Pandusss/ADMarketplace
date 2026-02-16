@@ -1,0 +1,147 @@
+@import '../../styles/variables.scss';
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background-base, #ffffff);
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background-color: rgba(255, 255, 255, 0.95);
+
+    @media (prefers-color-scheme: dark) {
+        background-color: rgba(0, 0, 0, 0.85);
+    }
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-background-secondary, #efeff3);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.headerTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.searchRow {
+    display: flex;
+    gap: 8px;
+}
+
+.filtersButton {
+    min-width: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    flex: 1;
+    padding: 16px;
+    padding-bottom: 80px;
+    /* Space for BottomBar */
+    display: flex;
+    flex-direction: column;
+}
+
+.segmented {
+    display: flex;
+    background-color: var(--color-background-secondary, #efeff3);
+    border-radius: 9px;
+    padding: 2px;
+    gap: 2px;
+}
+
+.segmentedItem {
+    flex: 1;
+    border: none;
+    background: none;
+    padding: 6px 12px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 500;
+    color: var(--color-foreground-secondary, #999999);
+    transition: all 0.2s ease;
+    position: relative;
+    text-align: center;
+
+    &.active {
+        background-color: var(--color-background-base, #ffffff);
+        color: var(--color-foreground-primary, #000000);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    &:hover:not(.active) {
+        color: var(--color-foreground-primary, #000000);
+    }
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.filtersOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.sheet {
+    background-color: var(--color-background-base, #ffffff);
+    border-radius: 20px 20px 0 0;
+    padding: 16px;
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+    animation: slideUp 0.3s ease-out;
+}
+
+.filtersHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.centerOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 101;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.centerCard {
+    width: 100%;
+    max-width: 400px;
+}

@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment & secrets
+.env
+*.env.local
+
+# IDE
+.cursor/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Docs
+docs/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Database
+*.db
+*.sqlite3
+
+# Node.js (frontend)
+frontend/node_modules/
+frontend/dist/
+frontend/tsc_errors.txt
+frontend/tsconfig.tsbuildinfo
+
+# Logs
+*.log
+verify_log*.txt
+verify_error*.log
+debug_output.txt
+
+# Binaries
+*.exe
+cloudflared.exe
+
+# Alembic
+backend/alembic/__pycache__/
+backend/alembic/versions/__pycache__/
+
+# Backend build artifacts
+backend/__pycache__/

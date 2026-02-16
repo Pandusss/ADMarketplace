@@ -1,0 +1,158 @@
+.page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: calc(12px + var(--safe-area-top)) 16px calc(110px + var(--safe-area-bottom)) 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarPlaceholder {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-accent-primary, #007aff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.headerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.ratingSection {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ratingBadgeWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  :global(.ui-text) {
+    opacity: 0.6;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.channelItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--color-border-separator, rgba(255, 255, 255, 0.05));
+  }
+}
+
+.channelAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.channelAvatarPlaceholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--color-fill-secondary, #2c2c2e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-foreground-primary);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.channelInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+/* Tabs Styled as Segmented Control */
+.tabsContainer {
+  padding: 0 4px;
+}
+
+.tabs {
+  display: flex;
+  padding: 3px;
+  background: var(--color-fill-secondary);
+  border-radius: 12px;
+  gap: 4px;
+}
+
+.tab {
+  flex: 1;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--color-foreground-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &.activeTab {
+    background-color: var(--color-background-section);
+    color: var(--color-foreground-primary);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active:not(.activeTab) {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}

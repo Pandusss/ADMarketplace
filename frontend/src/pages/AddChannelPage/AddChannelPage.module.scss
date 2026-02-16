@@ -1,0 +1,45 @@
+.page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: calc(12px + var(--safe-area-top)) 16px calc(92px + var(--safe-area-bottom)) 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.steps {
+  display: flex;
+  gap: 8px;
+}
+
+.stepPill {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 999px;
+  text-align: center;
+  font-size: 12px;
+  border: 1px solid var(--color-border-separator);
+  color: var(--color-foreground-secondary);
+  background: var(--color-background-section);
+}
+
+.active {
+  color: var(--color-accent-primary);
+  border-color: color-mix(in srgb, var(--color-accent-primary) 35%, var(--color-border-separator));
+  background: color-mix(in srgb, var(--color-accent-primary) 10%, var(--color-background-section));
+  font-weight: 700;
+}
+

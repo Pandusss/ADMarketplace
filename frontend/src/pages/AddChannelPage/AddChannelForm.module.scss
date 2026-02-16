@@ -1,0 +1,36 @@
+@use '../../styles/variables' as *;
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.steps {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.stepPill {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    border-radius: 99px;
+    /* Pill */
+    background: var(--color-background-secondary);
+    color: var(--color-foreground-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+
+    &.active {
+        background: var(--color-accent-primary, #007aff);
+        color: #ffffff;
+        font-weight: 600;
+    }
+}
+
+.stepContent {
+    display: flex;
+    flex-direction: column;
+}

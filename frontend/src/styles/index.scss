@@ -1,0 +1,50 @@
+@use './variables.scss' as *;
+@use './themes.scss' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-base);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile UX: prevent iOS "auto-zoom" on focused inputs (requires >= 16px font-size). */
+input,
+textarea,
+select {
+  font-size: 16px;
+}
+
+/* Mobile UX: prevent double-tap zoom / weird focus zoom in WebViews. */
+button,
+a {
+  touch-action: manipulation;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: var(--tg-viewport-height, 100vh);
+  height: var(--tg-viewport-height, 100dvh);
+  color: var(--color-foreground-primary);
+  background-color: var(--color-background-secondary);
+  overflow: hidden; /* AppShell handles scrolling */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Utility: hide scrollbars but keep scrolling */
+.noScrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.noScrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+

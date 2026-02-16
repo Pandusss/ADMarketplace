@@ -1,0 +1,86 @@
+.container {
+  color: var(--color-foreground-primary);
+  white-space: pre-wrap;
+}
+
+.hero {
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+.title {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.title2 {
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 650;
+}
+
+.text {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.caption {
+  font-size: 13px;
+  line-height: 16px;
+  color: var(--color-foreground-secondary);
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.primary {
+  color: var(--color-foreground-primary);
+}
+
+.secondary {
+  color: var(--color-foreground-secondary);
+}
+
+.tertiary {
+  color: var(--color-foreground-tertiary);
+}
+
+.accent {
+  color: var(--color-accent-primary);
+}
+
+.danger {
+  color: var(--color-state-destructive);
+}
+
+.normal {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.clickable {
+  cursor: pointer;
+}

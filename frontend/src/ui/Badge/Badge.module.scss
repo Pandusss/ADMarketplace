@@ -1,0 +1,41 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 600;
+  border: 1px solid var(--color-border-separator, rgba(0, 0, 0, 0.1));
+  background: var(--color-background-section, #f2f2f7);
+  color: var(--color-foreground-secondary, #999999);
+}
+
+.outline {
+  background: transparent !important;
+  border-color: currentColor;
+}
+
+.accent {
+  color: var(--color-accent-primary, #2481cc);
+  border-color: color-mix(in srgb, var(--color-accent-primary, #2481cc) 35%, var(--color-border-separator));
+  background: color-mix(in srgb, var(--color-accent-primary, #2481cc) 10%, var(--color-background-section));
+}
+
+.success {
+  color: var(--color-state-success, #29b35a);
+  border-color: color-mix(in srgb, var(--color-state-success, #29b35a) 35%, var(--color-border-separator));
+  background: color-mix(in srgb, var(--color-state-success, #29b35a) 10%, var(--color-background-section));
+}
+
+.warning {
+  color: var(--color-state-warning, #ffae00);
+  border-color: color-mix(in srgb, var(--color-state-warning, #ffae00) 35%, var(--color-border-separator));
+  background: color-mix(in srgb, var(--color-state-warning, #ffae00) 10%, var(--color-background-section));
+}
+
+.danger {
+  color: var(--color-state-destructive, #ff3b30);
+  border-color: color-mix(in srgb, var(--color-state-destructive, #ff3b30) 35%, var(--color-border-separator));
+  background: color-mix(in srgb, var(--color-state-destructive, #ff3b30) 10%, var(--color-background-section));
+}
