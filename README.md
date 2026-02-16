@@ -11,7 +11,7 @@ Telegram mini-app for buying and selling advertising spots in Telegram channels.
 
 **Telegram Bot:** [@ADMarkett_Bot](https://t.me/ADMarkett_Bot)
 
-**📖 Documentation:** [Project Overview & Architecture (Notion)](https://admarketplace.notion.site/ADMarket-2fb39c0a48fe804ea38bf3deac53300c)
+**Documentation:** [Project Overview & Architecture (Notion)](https://admarketplace.notion.site/ADMarket-2fb39c0a48fe804ea38bf3deac53300c)
 
 ## Tech Stack
 
